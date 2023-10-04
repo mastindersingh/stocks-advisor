@@ -1,36 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stock Adviser</title>
   <style>
-    .subscribe {
-      display: inline-block;
-      background-color: #ff5c00;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      text-decoration: none;
+    /* Add your styles here */
+    /* Example styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background: #50b3a2;
+      color: #fff;
+      padding: 1em 0;
       text-align: center;
     }
 
-    .subscribe:hover {
-      background-color: #e64a00;
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #333;
+      padding: 1em;
+    }
+
+    nav a {
+      color: #fff;
+      padding: 0 15px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .container {
+      padding: 2em;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      padding: 1em;
+    }
+
+    .social-links a {
+      margin: 0 10px;
     }
   </style>
 </head>
+
 <body>
-  <h1>Stock Adviser</h1>
-  <ul>
-    <% stocks.forEach(stock => { %>
-      <li><%= stock.name %> - $<%= stock.price %></li>
-    <% }); %>
-  </ul>
-  <a href="phonepe://pa/8105601518@ybl" class="subscribe" target="_blank">Subscribe Now</a>
+  <header>
+    <h1>Stock Adviser</h1>
+  </header>
+  <nav>
+    <a href="#contacts">Contacts</a>
+    <a href="#subscription">Subscription</a>
+    <a href="#education">Education</a>
+  </nav>
+  <div class="container">
+    <section id="stocks">
+      <h2>Stock Prices</h2>
+      <ul>
+        <% stocks.forEach(stock => { %>
+          <li><%= stock.name %> - <%= stock.name.includes('.BSE') ? '₹' : '$' %><%= stock.price %></li>
+        <% }); %>
+      </ul>
+    </section>
+    <section id="contacts">
+      <!-- Add your contacts information here -->
+    </section>
+    <section id="subscription">
+      <!-- Add your subscription form here -->
+    </section>
+    <section id="education">
+      <!-- Add your education information here -->
+    </section>
+  </div>
+  <div class="social-links">
+    <a href="https://www.facebook.com" target="_blank">Facebook</a>
+    <a href="https://www.instagram.com" target="_blank">Instagram</a>
+    <!-- Add other social media links as needed -->
+  </div>
 </body>
+
 </html>
 

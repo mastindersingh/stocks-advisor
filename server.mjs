@@ -24,13 +24,31 @@ app.listen(3000, () => {
 
 async function getStockPrices(stockSymbols) {
   const promises = stockSymbols.map(async symbol => {
-    const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${apiKey}`;
-    const response = await fetch(url);
-    const data = await response.json();
-    return {
-      name: symbol,
-      price: data['Global Quote']['05. price']
-    };
+    try {
+      const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${apiKey}`;
+      const response = await fetch(url);
+      const data = await response.json();
+
+      // Check if 'Global Quote' is defined in the response data
+      if (data['Global Quote']) {
+        return {
+          name: symbol,
+          price: data['Global Quote']['05. price']
+        };
+      } else {
+        console.error(`No data found for symbol: ${symbol}`);
+        return {
+          name: symbol,
+          price: 'N/A' // You can return a placeholder or error value here
+        };
+      }
+    } catch (error) {
+      console.error(`Error fetching data for symbol: ${symbol}`, error);
+      return {
+        name: symbol,
+        price: 'N/A' // You can return a placeholder or error value here
+      };
+    }
   });
   return Promise.all(promises);
 }
