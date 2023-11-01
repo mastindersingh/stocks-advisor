@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Adviser</title>
+
+  <!-- RUM agent script -->
+  <script src="https://cdn.jsdelivr.net/npm/@elastic/apm-rum@latest/dist/bundles/elastic-apm-rum.umd.min.js" crossorigin></script>
+
+  <!-- Initialize the RUM agent -->
+  <script>
+    elasticApm.init({
+      serviceName: 'stock-adviser',
+      serverUrl: 'https://bb90799eb81c43bba2ab8c4ebb66f486.apm.asia-south1.gcp.elastic-cloud.com:443',
+      serviceVersion: '1.0'
+    });
+  </script>
+
+  <style>
+    /* Add your styles here */
+    /* Example styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background: #50b3a2;
+      color: #fff;
+      padding: 1em 0;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #333;
+      padding: 1em;
+    }
+
+    nav a {
+      color: #fff;
+      padding: 0 15px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .container {
+      padding: 2em;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      padding: 1em;
+    }
+
+    .social-links a {
+      margin: 0 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Stock Adviser</h1>
+  </header>
+  <nav>
+    <a href="#contacts">Contacts</a>
+    <a href="#subscription">Subscription</a>
+    <a href="#education">Education</a>
+  </nav>
+  <div class="container">
+    <section id="stocks">
+      <h2>Stock Prices</h2>
+      <ul>
+        <% stocks.forEach(stock => { %>
+          <li><%= stock.name %> - <%= stock.name.includes('.BSE') ? '₹' : '$' %><%= stock.price %></li>
+        <% }); %>
+      </ul>
+    </section>
+    <section id="contacts">
+      <!-- Add your contacts information here -->
+    </section>
+    <section id="subscription">
+      <!-- Add your subscription form here -->
+    </section>
+    <section id="education">
+      <!-- Add your education information here -->
+    </section>
+  </div>
+  <div class="social-links">
+    <a href="https://www.facebook.com" target="_blank">Facebook</a>
+    <a href="https://www.instagram.com" target="_blank">Instagram</a>
+    <!-- Add other social media links as needed -->
+  </div>
+</body>
+
+</html>
+
