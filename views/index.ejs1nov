@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stock Adviser</title>
+
     <!-- RUM agent script -->
     <script src="https://cdn.jsdelivr.net/npm/@elastic/apm-rum@latest/dist/bundles/elastic-apm-rum.umd.min.js" crossorigin></script>
+
     <!-- Initialize the RUM agent -->
     <script>
         elasticApm.init({
@@ -15,18 +17,18 @@
             serviceVersion: '1.0'
         });
     </script>
+
     <style>
-        /* Enhanced Styling */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f7f9fc;
+            background-color: #f4f4f4;
         }
 
         header {
-            background: #2c3e50;
-            color: #ecf0f1;
+            background: #50b3a2;
+            color: #fff;
             padding: 1em 0;
             text-align: center;
         }
@@ -34,29 +36,27 @@
         nav {
             display: flex;
             justify-content: center;
-            background-color: #34495e;
+            background-color: #333;
             padding: 1em;
         }
 
         nav a {
-            color: #ecf0f1;
+            color: #fff;
             padding: 0 15px;
             text-decoration: none;
-            transition: background-color 0.3s;
         }
 
         nav a:hover {
-            background-color: #ecf0f1;
-            color: #34495e;
+            background-color: #ddd;
+            color: black;
         }
 
         .container {
             padding: 2em;
             background-color: #fff;
-            margin: 1em auto;
+            margin: 1em;
             border-radius: 5px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
         }
 
         table {
@@ -90,11 +90,6 @@
 
         .social-links a {
             margin: 0 10px;
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover {
-            color: #3498db;
         }
     </style>
 </head>
@@ -123,7 +118,7 @@
                         <% if (!stock.name.includes('.BSE')) { %>
                             <tr>
                                 <td><%= stock.name %></td>
-                                <td>$<%= stock.price || "Data not available" %></td>
+                                <td>$<%= stock.price %></td>
                             </tr>
                         <% } %>
                     <% }); %>
@@ -143,7 +138,7 @@
                         <% if (stock.name.includes('.BSE')) { %>
                             <tr>
                                 <td><%= stock.name %></td>
-                                <td>₹<%= stock.price || "Data not available" %></td>
+                                <td>₹<%= stock.price %></td>
                             </tr>
                         <% } %>
                     <% }); %>

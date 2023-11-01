@@ -8,7 +8,6 @@ const apm = require('elastic-apm-node').start({
 
 const express = require('express');
 const fetch = require('node-fetch');
-const { stockSymbols } = require('./stocks.js'); // Import the stockSymbols array
 
 const app = express();
 
@@ -19,7 +18,7 @@ const apiKey = 'K6ZMVVGGC8JBSKCT';
 
 app.get('/', async (req, res) => {
   try {
-    const stocks = await getStockPrices(stockSymbols); // Use the imported array
+    const stocks = await getStockPrices(['AAPL', 'GOOGL', 'AMZN', 'TCS.BSE', 'HCLTECH.BSE']);
     res.render('index', { stocks });
   } catch (error) {
     console.error(error);
