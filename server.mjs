@@ -1,7 +1,7 @@
 const apm = require('elastic-apm-node').start({
   serviceName: 'stock-adviser',
-  secretToken: 'I5MWMcrB2iTyk3y8Vz',
-  serverUrl: 'https://bb90799eb81c43bba2ab8c4ebb66f486.apm.asia-south1.gcp.elastic-cloud.com:443',
+  secretToken: 'C8G6rOEdbbUZRJnrud,
+  serverUrl: ''https://4769643cf26448ed8e6887b301a5ddd9.apm.us-central1.gcp.cloud.es.io:443
   environment: 'production',
   logLevel: 'debug'
 });
