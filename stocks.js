@@ -2,6 +2,17 @@ const stockSymbols = [
   'AAPL', 
   'GOOGL', 
   'AMZN', 
+  'WFC', 
+  'JPM',
+  'FE', 
+  'GDS', 
+  'PGRE', 
+  'MSFT', 
+  'NVDA', 
+  'LLY', 
+  'NFLX', 
+  'INTC',
+  'LI',
   'TCS.BSE', 
   'HCLTECH.BSE', 
   'APCOTEXIND.BSE', 
@@ -47,18 +58,8 @@ const stockSymbols = [
   'SHIVABIMETAL.BSE',
   'SUDARSCHEM.BSE',
   'PRICOL.BSE',
-  'IMFA.BSE',
-  'WFC', 
-  'JPM',
-  'FE', // FirstEnergy Corp.
-  'GDS', // GDS Holdings Limited
-  'PGRE', // Paramount Group, Inc.
-  'MSFT', // Microsoft Corporation
-  'NVDA', // NVIDIA Corporation
-  'LLY', // Eli Lilly and Company
-  'NFLX', // Netflix, Inc.
-  'INTC'
-  'LI'
+  'IMFA.BSE'
+  
 ];
 
 module.exports = { stockSymbols };
